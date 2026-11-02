@@ -2,6 +2,8 @@ from fastapi import FastAPI
 
 from config import settings
 from notification_router import router as notification_router
+from desi_bawarchi_router import router as desi_bawarchi_router
+
 
 app = FastAPI(
     title="OnboardIQ Notification Service",
@@ -10,6 +12,7 @@ app = FastAPI(
 )
 
 app.include_router(notification_router)
+app.include_router(desi_bawarchi_router)
 
 
 @app.get("/")
